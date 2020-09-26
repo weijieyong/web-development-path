@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: rgb(57, 58, 61);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.nav-bar {
+  justify-content: flex-end;
+  margin-top: 1.9rem;
+  font-size: 1.2rem;
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-bar li {
+  display: inline-flex;
+  margin-left: 1rem;
+}
+
+.nav-bar a:link,
+:visited {
+  font-weight: 100;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar a:hover {
+  color: gray;
+}
+
+.container {
+  padding: 3rem 0;
+}
+
+.header {
+  height: 30rem;
+  background-image: url("https://images.unsplash.com/photo-1524673450801-b5aa9b621b76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header h1 {
+  font-weight: 900;
+  width: 40%;
+}
+
+.header p {
+  margin-right: 1rem;
+  /* width: 50%; */
+}
+
+.header-text {
+  margin-left: 25rem;
+  margin-top: 2rem;
+}
+
+button {
+  color: white;
+  background-color: rgb(254, 147, 49);
+  border: none;
+  text-align: center;
+  border-radius: 3px;
+  padding: 0.6rem 1.2rem;
+}
+
+button:hover {
+  background-color: rgba(175, 102, 34, 0.6);
+  cursor: pointer;
+}
+
+.summary {
+  text-align: center;
+}
+
+.summary h1 {
+  margin-bottom: 1rem;
+}
+
+.summary p {
+  margin: auto 1rem;
+  margin-bottom: 1.5em;
+}
+
+.summary a {
+  text-decoration: none;
+  color: rgb(0, 119, 197);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-top: 5px solid rgb(18, 170, 170);
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px 6px rgba(65, 65, 65, 0.103);
+  margin: 0.7rem;
+  flex: 1 1 0;
+}
+
+.card-content {
+  margin: 2rem;
+}
+
+.card img {
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  margin: 1rem;
+}
