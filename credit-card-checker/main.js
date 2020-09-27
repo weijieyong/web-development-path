@@ -38,7 +38,7 @@ const batch = [
   mystery5,
 ];
 
-// Add your functions below:
+// Function to check valid or not
 const validateCred = (arr) => {
   let sum = 0;
   for (let i = arr.length - 1; i >= 0; i -= 2) {
@@ -56,6 +56,7 @@ const validateCred = (arr) => {
   } else return false;
 };
 
+// Function to find invalid cards
 const findInvalidCards = (arr) => {
   let invalidCard = [];
   for (let i = 0; i < arr.length; i++) {
@@ -66,6 +67,7 @@ const findInvalidCards = (arr) => {
   return invalidCard;
 };
 
+// Function to list invalid companies (non-repeated)
 const idInvalidCardCompanies = (arr) => {
   let invalidComp = [];
   for (let i = 0; i < arr.length; i++) {
@@ -85,10 +87,9 @@ const idInvalidCardCompanies = (arr) => {
   return (invalidComp = [...new Set(invalidComp)]);
 };
 
-// console.log(validateCred(valid1));
-// console.log(validateCred(invalid1));
-// console.log(validateCred(valid2));
-// console.log(validateCred(invalid2));
-// console.log(validateCred(mystery1));
+//Function to convert string to array
+const strToArr = (str) => {
+  return str.split("");
+};
 
-console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+// console.log(idInvalidCardCompanies(findInvalidCards(batch)));
