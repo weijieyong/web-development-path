@@ -38,7 +38,7 @@ const batch = [
   mystery5,
 ];
 
-// Function to check valid or not
+// Function to check card is valid or not
 const validateCred = (arr) => {
   let sum = 0;
   for (let i = arr.length - 1; i >= 0; i -= 2) {
@@ -51,36 +51,37 @@ const validateCred = (arr) => {
       sum += arr[j] * 2;
     }
   }
-  if (sum % 10 === 0) {
-    return true;
-  } else return false;
+  return sum % 10 === 0;
 };
 
+// To check
+console.log(validateCred(invalid1));
+
 // Function to find invalid cards
-const findInvalidCards = (arr) => {
-  let invalidCard = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (!validateCred(arr[i])) {
-      invalidCard.push(arr[i]);
+const findInvalidCards = (cards) => {
+  const invalidCard = [];
+  for (let i = 0; i < cards.length; i++) {
+    if (!validateCred(cards[i])) {
+      invalidCard.push(cards[i]);
     }
   }
   return invalidCard;
 };
 
 // Function to list invalid companies (non-repeated)
-const idInvalidCardCompanies = (arr) => {
+const idInvalidCardCompanies = (invalidCards) => {
   let invalidComp = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i][0] === 3) {
+  for (let i = 0; i < invalidCards.length; i++) {
+    if (invalidCards[i][0] === 3) {
       invalidComp.push("Amex");
-    } else if (arr[i][0] === 4) {
+    } else if (invalidCards[i][0] === 4) {
       invalidComp.push("Visa");
-    } else if (arr[i][0] === 5) {
+    } else if (invalidCards[i][0] === 5) {
       invalidComp.push("Mastercard");
-    } else if (arr[i][0] === 6) {
+    } else if (invalidCards[i][0] === 6) {
       invalidComp.push("Discover");
     } else {
-      invalidComp.push("Company not found");
+      console.log("Company not found");
     }
   }
   //remove duplicates
@@ -92,4 +93,11 @@ const strToArr = (str) => {
   return str.split("");
 };
 
-// console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+// Function that will convert invalid numbers into valid numbers
+// find the number after mod 10: // sum % 10
+// add it to the numbers which is not multiplied by 2
+// make sure the number after added must be less than 9
+
+// To check
+// const invalidBatch = findInvalidCards(batch);
+// console.log(idInvalidCardCompanies(invalidBatch));
